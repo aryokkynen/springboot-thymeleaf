@@ -7,7 +7,7 @@ import com.hello.thymeleaf.domain.Student;
 public interface StudentRepository {
 
 	
-	public static ArrayList<Student> findAll(){
+	public static ArrayList<Student> populateStudentList(){
 		
 		ArrayList<Student> list = new ArrayList<Student>();
 		
@@ -28,9 +28,7 @@ public interface StudentRepository {
 		st3.setLastName("Tulppu");
 		st3.setEmail("teppo@ankkalinna.fi");
 		list.add(st3);
-		
-		
-		
+
 		
 		return list;
 	}

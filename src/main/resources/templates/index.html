@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Asd</title>
+<title>Friendlist</title>
 </head>
 <body>
-Friendlist	
-<div th:each="friend : ${friends}"> 
-<p th:text="${friend.name}">Name</p>
+Friendlist
+<div th:each="friend : ${friends}">
+	<p th:text="${friend.name}">Name</p>
 </div>
-
-<h1>Form</h1>
-    <form action="#" th:action="@{/ifwafsdfasdndex}" th:object="${friends}" method="post">
-    	<p>name: <input type="text" th:field="*{friends.friend.name}" /></p>
-        
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+<hr />
+<div>
+<p>Add new friend</p>
+<form action="#" th:action="@{/saveFriend}" th:object="${friend}" method="post">
+	<table>
+		<tr><td><input type="text" th:field="*{name}" /></td></tr>
+		<tr><td><input type="submit" value="Submit" /></td></tr>
+	</table>
+</form>
+</div>
 </body>
 </html>
